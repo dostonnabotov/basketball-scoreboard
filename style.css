@@ -1,0 +1,151 @@
+:root {
+    --ff-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --ff-accent: "Cursed Timer ULiL";
+    --fs-900: 2rem;
+
+    --clr-accent: hsl(349, 93%, 64%);
+    
+    --neutral-900: hsl(353, 100%, 2%);
+    --neutral-800: hsl(229, 47%, 20%);
+    --neutral-400: hsl(224, 44%, 73%);
+    --neutral-200: hsl(0, 0%, 90%);
+    --neutral-100: hsl(0, 0%, 93%);
+}
+
+@media (min-width: 50em) {
+    :root {
+        --fs-900: 5.625rem;
+    }
+}
+
+/* @font-face kit by Fonts2u (https://fonts2u.com) */ 
+@font-face {
+    font-family: "Cursed Timer ULiL";
+    src: url("/assets/fonts/CursedTimerULiL.eot?") format("eot"),
+         url("/assets/fonts/CursedTimerULiL.woff") format("woff"),
+         url("/assets/fonts/CursedTimerULiL.ttf") format("truetype"),
+         url("/assets/fonts/CursedTimerULiL.svg#CursedTimerULiL") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+*, 
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+h1, h2, h3,
+p {
+    margin: 0;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+}
+
+button:active {
+    box-shadow: 0 0 0 2px hsl(202, 100%, 50%);
+    background-color: hsl(202, 100%, 50%, .3);
+}
+
+.flow > *:where(:not(:first-child)) {
+    margin-top: var(--flow-spacer, 1rem);
+}
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.ff-accent { font-family: var(--ff-accent); }
+.text-accent { color: var(--clr-accent); }
+.text-white { color: var(--neutral-100); }
+.text-default { color: var(--neutral-400); }
+.fs-900 { font-size: var(--fs-900); }
+
+body {
+    font-family: var(--ff-primary);
+    background-color: var(--neutral-200);
+    font-size: 1.125rem;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+h1, h2, h3,
+.fs-900 {
+    line-height: 1.1;
+}
+
+.card {
+    --gap: 2rem;
+    background-color: var(--neutral-800);
+    min-width: 30rem;
+    max-width: 100%;
+    padding: 1.5rem 2rem;
+    justify-content: space-around;
+    align-items: flex-end;
+    text-align: center;
+}
+
+
+.score {
+    background-color: var(--neutral-900);
+    max-width: fit-content;
+    overflow: auto;
+    margin-inline: auto;
+}
+
+.score  span {
+    line-height: 1;
+    padding: .4em .4em .2em .4em;
+}
+
+span {
+    display: inline-block;
+}
+
+.increments {
+    --gap: .8rem;
+    justify-content: center;
+    max-width: fit-content;
+    margin-inline: auto;
+}
+
+.btn {
+    padding: .2em .5em;
+    border-radius: .3em;
+    background-color: inherit;
+    letter-spacing: 1px;
+}
+
+.btn[data-type="primary"] {
+    font-weight: 700;
+    background-color: var(--neutral-900);
+    color: var(--clr-accent);
+}
+
+.btn[data-type="primary"]:hover,
+.btn[data-type="primary"]:focus {
+    outline: 1px solid var(--neutral-200);
+    background-color: transparent;
+    color: var(--neutral-100);
+}
+
+.btn[data-type="accent"] {
+    font-family: var(--ff-accent);
+    border: 1px solid var(--neutral-400);
+    color: var(--neutral-400);
+}
+
+.btn[data-type="accent"]:hover,
+.btn[data-type="accent"]:focus {
+    color: var(--neutral-100);
+    border-color: var(--neutral-100);
+}

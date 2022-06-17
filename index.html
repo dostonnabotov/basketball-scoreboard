@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Basketball Scoreboard</title>
+  </head>
+  <body>
+    <main class="container">
+      <div class="card flex">
+        <!-- Home card -->
+        <div class="card__home flow">
+          <h2 class="text-white">HOME</h2>
+          <div class="score">
+            <span class="ff-accent fs-900 text-accent" id="home-score">0</span>
+          </div>
+          <div class="increments flex ff-accent">
+            <button class="btn" data-type="accent" onclick="incrementHome1()">+1</button>
+            <button class="btn" data-type="accent" onclick="incrementHome2()">+2</button>
+            <button class="btn" data-type="accent" onclick="incrementHome3()">+3</button>
+          </div>
+        </div>
+        <!-- /Home card -->
+
+        <div class="card__misc flow">
+          <div class="fs-900 text-white" id="compare">=</div>
+          <button class="btn btn--mb" data-type="primary" onclick="newGame()">New Game</button>
+          <p class="ff-accent text-default" id="time">00 : 30 : 25</p>
+        </div>
+
+        <!-- Guest card -->
+        <div class="card__guest flow">
+          <h2 class="text-white">GUEST</h2>
+          <div class="score">
+            <span class="ff-accent fs-900 text-accent" id="guest-score">0</span>
+          </div>
+          <div class="increments flex ff-accent">
+            <button class="btn" data-type="accent" onclick="incrementGuest1()">+1</button>
+            <button class="btn" data-type="accent" onclick="incrementGuest2()">+2</button>
+            <button class="btn" data-type="accent" onclick="incrementGuest3()">+3</button>
+          </div>
+        </div>
+        <!-- /Guest card -->
+      </div>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
