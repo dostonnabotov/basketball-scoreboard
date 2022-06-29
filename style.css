@@ -1,3 +1,20 @@
+/* =========
+    Font
+========== */
+/* @font-face kit by Fonts2u (https://fonts2u.com) */ 
+@font-face {
+    font-family: "Cursed Timer ULiL";
+    src: url("./assets/fonts/CursedTimerULiL.eot?") format("eot"),
+         url("./assets/fonts/CursedTimerULiL.woff") format("woff"),
+         url("./assets/fonts/CursedTimerULiL.ttf") format("truetype"),
+         url("./assets/fonts/CursedTimerULiL.svg#CursedTimerULiL") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* =========
+    Root
+========== */
 :root {
     --ff-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --ff-accent: "Cursed Timer ULiL";
@@ -18,17 +35,9 @@
     }
 }
 
-/* @font-face kit by Fonts2u (https://fonts2u.com) */ 
-@font-face {
-    font-family: "Cursed Timer ULiL";
-    src: url("/assets/fonts/CursedTimerULiL.eot?") format("eot"),
-         url("/assets/fonts/CursedTimerULiL.woff") format("woff"),
-         url("/assets/fonts/CursedTimerULiL.ttf") format("truetype"),
-         url("/assets/fonts/CursedTimerULiL.svg#CursedTimerULiL") format("svg");
-    font-weight: normal;
-    font-style: normal;
-}
-
+/* =========
+    Reset
+========== */
 *, 
 *::before,
 *::after {
@@ -48,26 +57,9 @@ button {
     outline: 0;
 }
 
-button:active {
-    box-shadow: 0 0 0 2px hsl(202, 100%, 50%);
-    background-color: hsl(202, 100%, 50%, .3);
-}
-
-.flow > *:where(:not(:first-child)) {
-    margin-top: var(--flow-spacer, 1rem);
-}
-
-.flex {
-    display: flex;
-    gap: var(--gap, 1rem);
-}
-
-.ff-accent { font-family: var(--ff-accent); }
-.text-accent { color: var(--clr-accent); }
-.text-white { color: var(--neutral-100); }
-.text-default { color: var(--neutral-400); }
-.fs-900 { font-size: var(--fs-900); }
-
+/* ==========
+    Global
+=========== */
 body {
     font-family: var(--ff-primary);
     background-color: var(--neutral-200);
@@ -83,6 +75,34 @@ h1, h2, h3,
     line-height: 1.1;
 }
 
+span {
+    display: inline-block;
+}
+
+/* =============
+    Composition
+============== */
+.flow > *:where(:not(:first-child)) {
+    margin-top: var(--flow-spacer, 1rem);
+}
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+/* ==========
+    Utility
+=========== */
+.ff-accent { font-family: var(--ff-accent); }
+.text-accent { color: var(--clr-accent); }
+.text-white { color: var(--neutral-100); }
+.text-default { color: var(--neutral-400); }
+.fs-900 { font-size: var(--fs-900); }
+
+/* ==========
+    Block
+=========== */
 .card {
     --gap: 2rem;
     background-color: var(--neutral-800);
@@ -90,10 +110,9 @@ h1, h2, h3,
     max-width: 100%;
     padding: 1.5rem 2rem;
     justify-content: space-around;
-    align-items: flex-end;
+    align-items: center;
     text-align: center;
 }
-
 
 .score {
     background-color: var(--neutral-900);
@@ -107,10 +126,6 @@ h1, h2, h3,
     padding: .4em .4em .2em .4em;
 }
 
-span {
-    display: inline-block;
-}
-
 .increments {
     --gap: .8rem;
     justify-content: center;
@@ -118,6 +133,8 @@ span {
     margin-inline: auto;
 }
 
+/* Buttons
+=========== */
 .btn {
     padding: .2em .5em;
     border-radius: .3em;
@@ -125,27 +142,30 @@ span {
     letter-spacing: 1px;
 }
 
-.btn[data-type="primary"] {
+.btn:active {
+    box-shadow: 0 0 0 2px hsl(202, 100%, 50%);
+    background-color: hsl(202, 100%, 50%, .3);
+}
+
+.btn-primary {
     font-weight: 700;
     background-color: var(--neutral-900);
     color: var(--clr-accent);
 }
 
-.btn[data-type="primary"]:hover,
-.btn[data-type="primary"]:focus {
+.btn-primary:is(:hover, :focus) {
     outline: 1px solid var(--neutral-200);
     background-color: transparent;
     color: var(--neutral-100);
 }
 
-.btn[data-type="accent"] {
+.btn-accent {
     font-family: var(--ff-accent);
     border: 1px solid var(--neutral-400);
     color: var(--neutral-400);
 }
 
-.btn[data-type="accent"]:hover,
-.btn[data-type="accent"]:focus {
+.btn-accent:is(:hover, :focus) {
     color: var(--neutral-100);
     border-color: var(--neutral-100);
 }
